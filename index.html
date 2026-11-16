@@ -1,41 +1,1598 @@
 <!DOCTYPE html>
 <html lang="id"><head><base target="_top"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SIWIRA | Kanal Pengaduan Wirosari</title>
+
 <style>
-:root{--green:#087b5a;--green2:#075c46;--deep:#064b3b;--ink:#173b32;--bg:#f3f8f6;--line:#dceae4;--pale:#edf7f3;--white:#fff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Arial,Helvetica,sans-serif}.hero{background:linear-gradient(110deg,var(--deep),#0b8b68);color:white}.hero-inner{max-width:1060px;margin:auto;padding:30px 16px 15px}.brand{display:flex;align-items:center;gap:15px;margin-bottom:30px}.seal{width:70px;height:70px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none;border:3px solid #e8f2ed;color:#087b5a;font-size:30px}.brand h1{font-size:29px;line-height:1.15;margin:0 0 15px;font-weight:750}.brand p{margin:0;font-size:15px}.nav{display:flex;gap:7px;flex-wrap:wrap}.nav button{border:0;border-radius:10px;padding:10px 14px;background:#e8f3ee;color:#075d48;font-weight:700;font-size:14px;cursor:pointer}.nav button.active{background:#fff;color:#087b5a}.wrap{max-width:1060px;margin:18px auto 0;padding:0 16px}.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:16px;box-shadow:0 8px 26px #174a3510}.welcome{padding:22px 20px 20px}.panel h2{font-size:21px;margin:12px 0 12px}.welcome h2{margin:12px 0 13px}.welcome p{margin:0 0 12px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}.step{background:var(--pale);border-left:4px solid #07966b;border-radius:8px;padding:10px 12px;line-height:1.25;min-height:72px}.step b{display:block}.section-title{font-size:22px;margin:14px 0 24px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.field{margin-bottom:8px}.wide{grid-column:1/-1}label{display:block;font-weight:700;margin-bottom:6px}input,select,textarea{width:100%;padding:11px 12px;border:1px solid #cbded4;border-radius:9px;font:inherit;background:white;color:var(--ink)}textarea{min-height:120px;resize:vertical}.btn{border:0;border-radius:9px;padding:11px 16px;background:var(--green);color:#fff;font-weight:700;cursor:pointer}.btn:disabled{opacity:.6;cursor:wait}.muted{color:#61796f;font-size:13px}.hidden{display:none!important}.result{background:var(--pale);border:1px solid var(--line);border-radius:10px;padding:13px;margin-top:13px;white-space:pre-wrap}.error{color:#9c2727;background:#fff2f0}.news-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.news-card{padding:15px;border:1px solid var(--line);border-radius:12px;background:#fff}.news-card h3{margin:0 0 6px;font-size:17px}.pill{display:inline-block;padding:4px 10px;border-radius:30px;background:#e5f4ed;color:#086548;font-size:12px;font-weight:700}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:13px}td,th{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#f0f7f3}.footer{text-align:center;color:#758b81;padding:35px 12px 45px}.loginbox{max-width:600px}.adminrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.adminrow h2{flex:1}.logo-note{font-size:10px;color:#087b5a;text-align:center;font-weight:bold}
-@media(max-width:650px){.hero-inner{padding-top:20px}.brand{gap:11px;margin-bottom:22px}.seal{width:56px;height:56px;font-size:24px}.brand h1{font-size:20px;margin-bottom:8px}.brand p{font-size:13px}.nav button{padding:9px 11px;font-size:13px}.steps,.grid,.news-list{grid-template-columns:1fr}.wide{grid-column:auto}.panel{padding:16px}.section-title{margin-bottom:15px}}
+:root{--green:#087b5a;--green2:#075c46;--deep:#064b3b;--ink:#173b32;--bg:#f3f8f6;--line:#dceae4;--pale:#edf7f3;--white:#fff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Arial,Helvetica,sans-serif}.hero{background:linear-gradient(110deg,var(--deep),#0b8b68);color:white}.hero-inner{max-width:1060px;margin:auto;padding:30px 16px 15px}.brand{display:flex;align-items:center;gap:15px;margin-bottom:30px}.seal{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  background:#fff;
+  display:grid;
+  place-items:center;
+  flex:none;
+  border:3px solid #e8f2ed;
+  overflow:hidden;
+}
+
+.logo-img{
+  width:75%;
+  height:75%;
+  object-fit:contain;
+  padding:2px;
+}.brand h1{font-size:29px;line-height:1.15;margin:0 0 15px;font-weight:750}.brand p{margin:0;font-size:15px}.nav{display:flex;gap:7px;flex-wrap:wrap}.nav button{border:0;border-radius:10px;padding:10px 14px;background:#e8f3ee;color:#075d48;font-weight:700;font-size:14px;cursor:pointer}.nav button.active{background:#fff;color:#087b5a}.wrap{max-width:1060px;margin:18px auto 0;padding:0 16px}.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:16px;box-shadow:0 8px 26px #174a3510}.welcome{padding:22px 20px 20px}.panel h2{font-size:21px;margin:12px 0 12px}.welcome h2{margin:12px 0 13px}.welcome p{margin:0 0 12px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}.step{background:var(--pale);border-left:4px solid #07966b;border-radius:8px;padding:10px 12px;line-height:1.25;min-height:72px}.step b{display:block}.section-title{font-size:22px;margin:14px 0 24px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.field{margin-bottom:8px}.wide{grid-column:1/-1}label{display:block;font-weight:700;margin-bottom:6px}input,select,textarea{width:100%;padding:11px 12px;border:1px solid #cbded4;border-radius:9px;font:inherit;background:white;color:var(--ink)}textarea{min-height:120px;resize:vertical}.btn{border:0;border-radius:9px;padding:11px 16px;background:var(--green);color:#fff;font-weight:700;cursor:pointer}.btn:disabled{opacity:.6;cursor:wait}.muted{color:#61796f;font-size:13px}.hidden{display:none!important}.result{background:var(--pale);border:1px solid var(--line);border-radius:10px;padding:13px;margin-top:13px;white-space:pre-wrap}.error{color:#9c2727;background:#fff2f0}.news-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.news-card{padding:15px;border:1px solid var(--line);border-radius:12px;background:#fff}.news-card h3{margin:0 0 6px;font-size:17px}.pill{display:inline-block;padding:4px 10px;border-radius:30px;background:#e5f4ed;color:#086548;font-size:12px;font-weight:700}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:13px}td,th{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#f0f7f3}.footer{text-align:center;color:#758b81;padding:35px 12px 45px}.loginbox{max-width:600px}.adminrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.adminrow h2{flex:1}.logo-note{font-size:10px;color:#087b5a;text-align:center;font-weight:bold}
+
+/* TAMPILAN MOBILE SIWIRA */
+/* BERANDA MODERN SIWIRA */
+.home-banner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:28px;
+  margin-bottom:25px;
+  border-radius:18px;
+  color:white;
+  background:linear-gradient(120deg,#064b3b,#0b9870);
+  box-shadow:0 8px 25px #064b3b20;
+}
+
+.banner-content{max-width:650px}
+.banner-label{
+  display:inline-block;
+  padding:5px 10px;
+  border-radius:30px;
+  background:#ffffff25;
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+.home-banner h2{
+  margin:13px 0 8px;
+  font-size:27px;
+  color:white;
+}
+.home-banner p{
+  margin:0 0 17px;
+  color:#e3f5ed;
+  max-width:560px;
+}
+.banner-btn{
+  background:white;
+  color:#075c46;
+}
+.banner-icon{
+  font-size:75px;
+  opacity:.9;
+  padding:10px;
+}
+
+.home-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin:25px 2px 13px;
+}
+.home-heading h2{
+  font-size:20px;
+  margin:0;
+}
+.home-heading p{
+  font-size:13px;
+  color:#71867c;
+  margin:3px 0 0;
+}
+.live-label{
+  color:#087b5a;
+  font-size:11px;
+  font-weight:bold;
+  white-space:nowrap;
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+}
+.stat-card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:17px;
+  box-shadow:0 5px 18px #174a3508;
+}
+.stat-icon{
+  font-size:23px;
+  margin-bottom:9px;
+}
+.stat-number{
+  font-size:27px;
+  font-weight:800;
+  color:#173b32;
+}
+.stat-label{
+  color:#71867c;
+  font-size:12px;
+  margin-top:3px;
+}
+.stat-total{border-top:4px solid #087b5a}
+.stat-new{border-top:4px solid #3185d6}
+.stat-process{border-top:4px solid #e5a12c}
+.stat-done{border-top:4px solid #20a46b}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+}
+.service-card{
+  display:block;
+  width:100%;
+  text-align:left;
+  padding:17px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:14px;
+  cursor:pointer;
+  font:inherit;
+  color:var(--ink);
+  transition:transform .2s,box-shadow .2s;
+}
+.service-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 22px #174a3515;
+}
+.service-icon{
+  width:46px;
+  height:46px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  font-size:23px;
+  margin-bottom:13px;
+}
+.service-green{background:#e5f5ed}
+.service-blue{background:#e8f1ff}
+.service-orange{background:#fff2df}
+.service-purple{background:#f1eaff}
+.service-card h3{
+  font-size:15px;
+  margin:0 0 6px;
+}
+.service-card p{
+  min-height:58px;
+  margin:0 0 12px;
+  color:#71867c;
+  font-size:12px;
+  line-height:1.5;
+}
+.service-card span{
+  color:#087b5a;
+  font-size:12px;
+  font-weight:bold;
+}
+.text-link{
+  border:0;
+  background:transparent;
+  color:#087b5a;
+  font-weight:bold;
+  cursor:pointer;
+  font-size:13px;
+  white-space:nowrap;
+}
+
+/* PENYESUAIAN BERANDA DI HP */
+@media(max-width:650px){
+  .home-banner{
+    padding:20px 17px;
+    border-radius:15px;
+    margin-bottom:20px;
+  }
+  .home-banner h2{font-size:21px}
+  .home-banner p{font-size:13px}
+  .banner-icon{font-size:48px;padding:0}
+  .stats-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:9px;
+  }
+  .stat-card{padding:13px}
+  .stat-number{font-size:24px}
+  .stat-label{font-size:11px}
+  .service-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:9px;
+  }
+  .service-card{padding:13px}
+  .service-card p{min-height:72px;font-size:11px}
+  .service-card h3{font-size:13px}
+  .service-icon{
+    width:40px;
+    height:40px;
+    font-size:20px;
+  }
+  .home-heading{margin-top:21px}
+}
+@media(max-width:650px){
+
+  body{
+    font-size:15px;
+    line-height:1.6;
+  }
+
+  .hero-inner{
+    padding:16px 14px 12px;
+  }
+
+  .brand{
+    gap:12px;
+    margin-bottom:18px;
+    align-items:center;
+  }
+
+  .seal{
+    width:54px;
+    height:54px;
+    flex:none;
+  }
+
+  .brand h1{
+    font-size:17px;
+    line-height:1.3;
+    margin:0 0 5px;
+  }
+
+  .brand p{
+    font-size:12px;
+    line-height:1.4;
+  }
+
+  .nav{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+  }
+
+  .nav button{
+    width:100%;
+    min-height:44px;
+    padding:10px 6px;
+    font-size:13px;
+    border-radius:9px;
+  }
+
+  .nav button:last-child{
+    grid-column:1/-1;
+  }
+
+  .wrap{
+    margin:12px auto 0;
+    padding:0 11px;
+  }
+
+  .panel{
+    padding:16px 14px;
+    border-radius:14px;
+    margin-bottom:12px;
+  }
+
+  .welcome{
+    padding:18px 15px;
+  }
+
+  .panel h2{
+    font-size:19px;
+  }
+
+  .welcome h2{
+    margin-top:5px;
+  }
+
+  .steps,
+  .grid,
+  .news-list{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  .step{
+    min-height:auto;
+    padding:13px;
+  }
+
+  .field{
+    margin-bottom:10px;
+  }
+
+  input,select,textarea{
+    min-height:46px;
+    padding:12px;
+    font-size:16px;
+    border-radius:10px;
+  }
+
+  textarea{
+    min-height:130px;
+  }
+
+  input[type="file"]{
+    font-size:14px;
+    padding:10px;
+  }
+
+  .btn{
+    width:100%;
+    min-height:46px;
+    padding:12px 16px;
+    font-size:15px;
+  }
+
+  .section-title{
+    font-size:20px;
+    margin:18px 0 12px;
+  }
+
+  .news-card{
+    padding:14px;
+  }
+
+  .news-card h3{
+    font-size:17px;
+  }
+
+  .tablewrap{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  table{
+    min-width:700px;
+    font-size:13px;
+  }
+
+  td,th{
+    padding:9px;
+  }
+
+  .adminrow{
+    align-items:stretch;
+  }
+
+  .adminrow h2{
+    flex-basis:100%;
+  }
+
+  .footer{
+    padding:25px 12px 35px;
+    font-size:12px;
+  }
+}
+
+/* HP LAYAR SANGAT KECIL */
+@media(max-width:380px){
+  .brand h1{
+    font-size:15px;
+  }
+
+  .brand p{
+    font-size:11px;
+  }
+
+  .nav button{
+    font-size:12px;
+  }
+
+  .panel{
+    padding:13px 11px;
+  }
+}
+
+/* PENCARIAN DAN FILTER ADMIN SIWIRA */
+.admin-tools{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:10px;
+  margin-bottom:15px;
+}
+
+.admin-tools input,
+.admin-tools select{
+  width:100%;
+  min-height:44px;
+  padding:10px 12px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:white;
+  font-size:14px;
+}
+
+@media(max-width:650px){
+  .admin-tools{
+    grid-template-columns:1fr;
+  }
+}
+
+/* =====================================
+   SIWIRA - MODERN COLOR THEME
+   ===================================== */
+
+:root{
+  --ink:#203449;
+  --muted:#718096;
+  --line:#E1E8F0;
+  --primary:#123B5D;
+  --green:#087F8C;
+  --gold:#F0A83A;
+  --surface:#FFFFFF;
+  --background:#EEF3F8;
+}
+
+body{
+  background:#EEF3F8;
+  color:#203449;
+}
+
+/* HEADER DAN NAVIGASI */
+header,.hero{
+  background:linear-gradient(120deg,#123B5D,#087F8C);
+}
+
+.nav button{
+  border-radius:10px;
+  transition:all .2s ease;
+}
+
+.nav button:hover{
+  background:#F0A83A;
+  color:#203449;
+}
+
+/* PANEL DAN KARTU */
+.panel,.stat-card,.service-card,.news-card{
+  background:#FFFFFF;
+  border:1px solid #E1E8F0;
+  border-radius:16px;
+  box-shadow:0 5px 20px rgba(31,55,80,.06);
+}
+
+.panel h2{
+  color:#123B5D;
+}
+
+/* TOMBOL */
+.btn{
+  background:#087F8C;
+  color:#FFFFFF;
+  border:0;
+  border-radius:10px;
+  font-weight:700;
+  transition:all .2s ease;
+}
+
+.btn:hover{
+  background:#123B5D;
+  transform:translateY(-1px);
+}
+
+/* FORM INPUT */
+input,select,textarea{
+  border:1px solid #D8E1EB;
+  border-radius:10px;
+  background:#FFFFFF;
+  color:#203449;
+}
+
+input:focus,select:focus,textarea:focus{
+  outline:none;
+  border-color:#087F8C;
+  box-shadow:0 0 0 3px rgba(8,127,140,.12);
+}
+
+/* BERANDA */
+.home-banner{
+  background:linear-gradient(120deg,#123B5D 0%,#087F8C 65%,#25A69A 100%);
+}
+
+.banner-label{
+  background:#F0A83A;
+  color:#203449;
+}
+
+.banner-btn{
+  background:#F0A83A;
+  color:#203449;
+}
+
+.banner-btn:hover{
+  background:#FFFFFF;
+  color:#123B5D;
+}
+
+/* KARTU STATISTIK */
+.stat-total{border-top:4px solid #123B5D}
+.stat-new{border-top:4px solid #3185D6}
+.stat-process{border-top:4px solid #F0A83A}
+.stat-done{border-top:4px solid #087F8C}
+
+.stat-number{color:#123B5D}
+
+/* IKON LAYANAN */
+.service-green{background:#DDF3EF;color:#087F8C}
+.service-blue{background:#E1EDFA;color:#3185D6}
+.service-orange{background:#FFF0D8;color:#C98217}
+.service-purple{background:#EEE9FA;color:#6C63A8}
+
+/* TABEL ADMIN */
+table{
+  border-collapse:separate;
+  border-spacing:0;
+}
+
+th{
+  background:#123B5D;
+  color:#FFFFFF;
+  padding:12px;
+}
+
+td{
+  border-bottom:1px solid #E8EDF3;
+  background:#FFFFFF;
+}
+
+tr:hover td{
+  background:#F3F8FC;
+}
+
+/* ALUR PENGADUAN */
+.step{
+  background:linear-gradient(145deg,#FFFFFF,#F0F6FA);
+  border:1px solid #DCE6EF;
+  border-radius:14px;
+}
+
+/* FOOTER */
+.footer{
+  background:#123B5D;
+  color:#EAF2F8;
+}
+
+/* TAMPILAN MOBILE */
+@media(max-width:650px){
+  .panel,.stat-card,.service-card,.news-card{
+    border-radius:13px;
+  }
+
+  .home-banner{
+    background:linear-gradient(145deg,#123B5D,#087F8C);
+  }
+
+  .btn{
+    min-height:45px;
+  }
+}
+
+/* KARTU BERITA SIWIRA */
+.news-list{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  margin-top:15px;
+}
+
+.news-card{
+  background:#fff;
+  border:1px solid #e1e8f0;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 5px 20px rgba(31,55,80,.07);
+  transition:transform .2s,box-shadow .2s;
+}
+
+.news-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 25px rgba(31,55,80,.12);
+}
+
+.news-image{
+  height:175px;
+  background:#eaf1f6;
+  overflow:hidden;
+}
+
+.news-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.news-placeholder{
+  display:grid;
+  place-items:center;
+  height:100%;
+  font-size:55px;
+  color:#087f8c;
+}
+
+.news-content{
+  padding:17px;
+}
+
+.news-date{
+  color:#087f8c;
+  font-size:12px;
+  margin-bottom:9px;
+}
+
+.news-card h3{
+  color:#123b5d;
+  font-size:17px;
+  line-height:1.4;
+  margin:0 0 10px;
+}
+
+.news-summary{
+  color:#718096;
+  font-size:13px;
+  line-height:1.6;
+  margin:0 0 15px;
+}
+
+.news-read{
+  border:0;
+  background:#e2f3f1;
+  color:#087f8c;
+  padding:10px 13px;
+  border-radius:9px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.news-read:hover{
+  background:#087f8c;
+  color:white;
+}
+
+/* MODAL BERITA */
+#modalBerita{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:rgba(15,35,55,.65);
+  padding:18px;
+  align-items:center;
+  justify-content:center;
+}
+
+.news-modal-content{
+  position:relative;
+  background:white;
+  width:100%;
+  max-width:700px;
+  max-height:85vh;
+  overflow-y:auto;
+  padding:25px;
+  border-radius:17px;
+  color:#203449;
+  line-height:1.7;
+}
+
+.news-modal-content h2{
+  color:#123b5d;
+  margin:10px 0;
+}
+
+.news-modal-image{
+  width:100%;
+  max-height:350px;
+  object-fit:cover;
+  border-radius:12px;
+  margin:12px 0;
+}
+
+.news-close{
+  float:right;
+  border:0;
+  background:#eef3f8;
+  border-radius:8px;
+  padding:8px 12px;
+  cursor:pointer;
+}
+
+@media(max-width:850px){
+  .news-list{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:550px){
+  .news-list{
+    grid-template-columns:1fr;
+  }
+  .news-image{
+    height:190px;
+  }
+  .news-modal-content{
+    padding:18px;
+  }
+}
+
+/* DASHBOARD ADMIN MODERN */
+.admin-card-list{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+  margin-top:15px;
+}
+
+.admin-card{
+  background:#fff;
+  border:1px solid #e2e8f0;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 4px 14px rgba(20,45,70,.06);
+}
+
+.admin-card-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+  padding:17px;
+  background:#f5f8fc;
+  border-bottom:1px solid #e8edf3;
+}
+
+.admin-ticket{
+  color:#087f8c;
+  font-weight:800;
+  font-size:14px;
+}
+
+.admin-pelapor{
+  font-size:16px;
+  font-weight:700;
+  margin-top:5px;
+  color:#183b56;
+}
+
+.status-badge{
+  padding:6px 10px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:700;
+  white-space:nowrap;
+  background:#edf2f7;
+  color:#334155;
+}
+
+.status-diterima{background:#fff1d6;color:#946200}
+.status-verifikasi{background:#e5edff;color:#3159a5}
+.status-proses{background:#dff4f2;color:#08766c}
+.status-selesai{background:#e0f5e5;color:#26733b}
+.status-ditolak{background:#ffe5e5;color:#b42318}
+
+.admin-card-body{
+  padding:17px;
+  color:#334155;
+}
+
+.admin-kategori{
+  display:inline-block;
+  background:#e8f3f5;
+  color:#087f8c;
+  padding:5px 9px;
+  border-radius:7px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.admin-card-body h3{
+  color:#183b56;
+  font-size:17px;
+  margin:10px 0 7px;
+}
+
+.admin-card-body p{
+  font-size:14px;
+  line-height:1.6;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+}
+
+.admin-photo{
+  display:inline-block;
+  margin-top:8px;
+  color:#087f8c;
+  font-weight:700;
+  text-decoration:none;
+}
+
+.admin-card-form{
+  padding:17px;
+  background:#fafbfd;
+  border-top:1px solid #e8edf3;
+  display:grid;
+  gap:9px;
+}
+
+.admin-card-form label{
+  font-size:13px;
+  font-weight:700;
+  color:#334155;
+  margin-top:5px;
+}
+
+.admin-card-form select,
+.admin-card-form textarea{
+  width:100%;
+  box-sizing:border-box;
+  border:1px solid #d5dee8;
+  border-radius:9px;
+  padding:11px;
+  font:inherit;
+  background:white;
+}
+
+.admin-card-form textarea{
+  min-height:85px;
+  resize:vertical;
+}
+
+.admin-save{
+  width:100%;
+  margin-top:8px;
+  background:#087f8c;
+  color:white;
+  border:0;
+  border-radius:9px;
+  padding:12px;
+  font-weight:700;
+}
+
+.empty-admin{
+  padding:25px;
+  text-align:center;
+  background:#f5f8fc;
+  border-radius:12px;
+  color:#64748b;
+}
+
+@media(min-width:900px){
+  .admin-card-list{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+/* STATISTIK DASHBOARD ADMIN */
+.admin-stats{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:13px;
+  margin:18px 0 22px;
+}
+
+.admin-stat{
+  padding:17px;
+  border-radius:14px;
+  border:1px solid #e2e8f0;
+  background:#fff;
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+  box-shadow:0 3px 12px rgba(20,45,70,.05);
+}
+
+.admin-stat span{
+  font-size:13px;
+  font-weight:700;
+  color:#475569;
+}
+
+.admin-stat strong{
+  font-size:30px;
+  line-height:1.2;
+  color:#183b56;
+}
+
+.admin-stat small{
+  font-size:11px;
+  color:#64748b;
+}
+
+.stat-total{border-left:4px solid #315b80}
+.stat-diterima{border-left:4px solid #e0a02b}
+.stat-verifikasi{border-left:4px solid #5479c5}
+.stat-proses{border-left:4px solid #087f8c}
+.stat-selesai{border-left:4px solid #319653}
+.stat-ditolak{border-left:4px solid #d9534f}
+
+@media(max-width:650px){
+  .admin-stats{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:9px;
+  }
+
+  .admin-stat{
+    padding:13px;
+  }
+
+  .admin-stat strong{
+    font-size:25px;
+  }
+}
+
 </style></head><body>
-<header class="hero"><div class="hero-inner"><div class="brand"><div class="seal" aria-label="Lambang Kecamatan">🏛️<div class="logo-note">WRS</div></div><div><h1>PEMERINTAH KECAMATAN WIROSARI</h1><p>Kanal Pengaduan &amp; Aspirasi Masyarakat</p></div></div><nav class="nav"><button class="active" onclick="showPage('home',this)">Beranda</button><button onclick="showPage('buat',this)">Buat Pengaduan</button><button onclick="showPage('lacak',this)">Cek Status</button><button onclick="showPage('berita',this)">Berita &amp; Pengumuman</button><button onclick="showPage('admin',this)">Admin</button></nav></div></header>
+<header class="hero"><div class="hero-inner"><div class="brand"><div class="seal">
+  <img
+    src="https://drive.google.com/thumbnail?id=1hQWSsPJov0KwSPKMJtVicies5ZqGTsgy&sz=w300"
+    alt="Logo Kecamatan Wirosari"
+    class="logo-img">
+</div><div><h1>PEMERINTAH KECAMATAN WIROSARI</h1><p>Kanal Pengaduan &amp; Aspirasi Masyarakat</p></div></div><nav class="nav"><button class="active" onclick="showPage('home',this)">Beranda</button><button onclick="showPage('buat',this)">Buat Pengaduan</button><button onclick="showPage('lacak',this)">Cek Status</button><button onclick="showPage('berita',this)">Berita &amp; Pengumuman</button><button onclick="showPage('admin',this)">Admin</button></nav></div></header>
 <main class="wrap">
-<section id="home"><div class="panel welcome"><h2>Selamat Datang</h2><p>Sampaikan pengaduan, keluhan, masukan, dan aspirasi masyarakat Kecamatan Wirosari secara mudah dan terpantau.</p><div class="steps"><div class="step"><b>1. Kirim</b>Isi formulir pengaduan.</div><div class="step"><b>2. Simpan Tiket</b>Nomor tiket diberikan setelah laporan diterima.</div><div class="step"><b>3. Pantau</b>Cek menggunakan nomor tiket dan 4 digit terakhir WhatsApp.</div></div></div><h2 class="section-title">Berita Terbaru</h2><div id="homeNews">Memuat berita...</div></section>
-<section id="buat" class="panel hidden"><h2>Buat Pengaduan</h2><p class="muted">Lengkapi formulir berikut. Kolom bertanda * wajib diisi.</p><form id="complaintForm" onsubmit="sendComplaint(event)"><div class="grid"><div class="field"><label>Nama *</label><input name="nama" required maxlength="120"></div><div class="field"><label>Nomor WhatsApp *</label><input name="whatsapp" required inputmode="tel" maxlength="20" placeholder="08xxxxxxxxxx"></div><div class="field"><label>Email</label><input name="email" type="email"></div><div class="field"><label>Alamat *</label><input name="alamat" required></div><div class="field"><label>Kategori *</label><select name="kategori" required><option value="">Pilih kategori</option><option>Infrastruktur</option><option>Pelayanan Publik</option><option>Sosial</option><option>Keamanan &amp; Ketertiban</option><option>Desa/Kelurahan</option><option>Lainnya</option></select></div><div class="field"><label>Prioritas</label><select name="prioritas"><option>Normal</option><option>Penting</option><option>Mendesak</option></select></div><div class="field wide"><label>Judul Pengaduan *</label><input name="judul" required maxlength="180"></div><div class="field wide"><label>Isi Pengaduan / Aspirasi *</label><textarea name="isi" required></textarea></div><input name="isianTambahan" class="hidden" tabindex="-1" autocomplete="off"></div><button class="btn" type="submit">Kirim Pengaduan</button></form><div id="sendResult"></div></section>
+<section id="home">
+
+  <!-- Sambutan -->
+  <div class="home-banner">
+    <div class="banner-content">
+      <span class="banner-label">PELAYANAN PUBLIK DIGITAL</span>
+      <h2>Selamat Datang di SIWIRA</h2>
+      <p>
+        Sampaikan pengaduan, keluhan, masukan, dan aspirasi
+        masyarakat Kecamatan Wirosari dengan mudah,
+        cepat, dan transparan.
+      </p>
+      <button class="btn banner-btn"
+        onclick="showPage('buat',null)">
+        Buat Pengaduan
+      </button>
+    </div>
+    <div class="banner-icon">🏛️</div>
+  </div>
+
+
+
+  <!-- Layanan -->
+  <div class="home-heading">
+    <div>
+      <h2>Layanan SIWIRA</h2>
+      <p>Pilih layanan yang ingin Anda gunakan</p>
+    </div>
+  </div>
+
+  <div class="service-grid">
+
+    <button class="service-card"
+      onclick="showPage('buat',null)">
+      <div class="service-icon service-green">📝</div>
+      <h3>Buat Pengaduan</h3>
+      <p>Sampaikan keluhan, laporan, dan aspirasi Anda.</p>
+      <span>Mulai layanan →</span>
+    </button>
+
+    <button class="service-card"
+      onclick="showPage('lacak',null)">
+      <div class="service-icon service-blue">🔎</div>
+      <h3>Cek Status</h3>
+      <p>Pantau perkembangan pengaduan menggunakan nomor tiket.</p>
+      <span>Lacak laporan →</span>
+    </button>
+
+    <button class="service-card"
+      onclick="showPage('berita',null)">
+      <div class="service-icon service-orange">📢</div>
+      <h3>Berita & Pengumuman</h3>
+      <p>Dapatkan informasi terbaru Kecamatan Wirosari.</p>
+      <span>Lihat informasi →</span>
+    </button>
+
+    <button class="service-card"
+      onclick="showPage('admin',null)">
+      <div class="service-icon service-purple">🛡️</div>
+      <h3>Admin / Petugas</h3>
+      <p>Masuk ke dashboard pengelolaan pengaduan.</p>
+      <span>Login petugas →</span>
+    </button>
+
+  </div>
+
+  <!-- Alur pengaduan -->
+  <div class="home-heading">
+    <div>
+      <h2>Alur Pengaduan</h2>
+      <p>Proses pelayanan pengaduan masyarakat</p>
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <b>01. Kirim Laporan</b>
+      Isi formulir pengaduan dan lampirkan foto jika diperlukan.
+    </div>
+    <div class="step">
+      <b>02. Simpan Nomor Tiket</b>
+      Simpan nomor tiket yang diberikan sistem.
+    </div>
+    <div class="step">
+      <b>03. Pantau Proses</b>
+      Periksa perkembangan laporan melalui menu Cek Status.
+    </div>
+  </div>
+
+  <!-- Berita -->
+  <div class="home-heading">
+    <div>
+      <h2>Berita Terbaru</h2>
+      <p>Informasi dan pengumuman terkini</p>
+    </div>
+    <button class="text-link"
+      onclick="showPage('berita',null)">
+      Lihat semua →
+    </button>
+  </div>
+
+  <div id="homeNews">Memuat berita...</div>
+
+</section>
+<section id="buat" class="panel hidden"><h2>Buat Pengaduan</h2><p class="muted">Lengkapi formulir berikut. Kolom bertanda * wajib diisi.</p><form id="complaintForm" onsubmit="sendComplaint(event)"><div class="grid"><div class="field"><label>Nama *</label><input name="nama" required maxlength="120"></div><div class="field"><label>Nomor WhatsApp *</label><input name="whatsapp" required inputmode="tel" maxlength="20" placeholder="08xxxxxxxxxx"></div><div class="field"><label>Email</label><input name="email" type="email"></div><div class="field"><label>Alamat *</label><input name="alamat" required></div><div class="field"><label>Kategori *</label><select name="kategori" required><option value="">Pilih kategori</option><option>Infrastruktur</option><option>Pelayanan Publik</option><option>Sosial</option><option>Keamanan &amp; Ketertiban</option><option>Desa/Kelurahan</option><option>Lainnya</option></select></div><div class="field"><label>Prioritas</label><select name="prioritas"><option>Normal</option><option>Penting</option><option>Mendesak</option></select></div><div class="field wide"><label>Judul Pengaduan *</label><input name="judul" required maxlength="180"></div><div class="field wide"><label>Isi Pengaduan / Aspirasi *</label><textarea name="isi" required></textarea></div>
+<div class="field wide">
+  <label>Foto Bukti Pengaduan (Opsional)</label>
+  <input
+    type="file"
+    id="fotoBukti"
+    accept=".jpg,.jpeg,.png,image/jpeg,image/png"
+  >
+  <p class="muted">Format JPG, JPEG, atau PNG. Ukuran maksimal 5 MB.</p>
+</div><input name="isianTambahan" class="hidden" tabindex="-1" autocomplete="off"></div><button class="btn" type="submit">Kirim Pengaduan</button></form><div id="sendResult"></div></section>
 <section id="lacak" class="panel hidden"><h2>Cek Status Pengaduan</h2><p class="muted">Masukkan nomor tiket dan 4 digit terakhir nomor WhatsApp yang digunakan saat mengirim laporan.</p><div class="grid"><div class="field"><label>Nomor Tiket</label><input id="trackTicket" placeholder="WRS-YYYYMMDD-XXXX"></div><div class="field"><label>4 Digit Terakhir WhatsApp</label><input id="trackPhone" inputmode="numeric" maxlength="4" placeholder="1234"></div></div><button class="btn" onclick="track()">Cek Status</button><div id="trackResult"></div></section>
 <section id="berita" class="panel hidden"><h2>Berita &amp; Pengumuman</h2><div id="newsList">Memuat berita...</div></section>
 <section id="admin" class="panel hidden"><div id="loginBox" class="loginbox"><h2>Login Admin / Petugas</h2><div class="grid"><div class="field"><label>Username</label><input id="username" autocomplete="username"></div><div class="field"><label>Password</label><input id="password" type="password" autocomplete="current-password"></div></div><button class="btn" onclick="login()">Login</button><div id="loginResult"></div></div><div id="adminBox" class="hidden"><div class="adminrow"><h2>Dashboard Pengaduan</h2><button class="btn" onclick="loadAdmin()">Muat Ulang</button><button class="btn" onclick="logout()">Keluar</button></div><div id="adminTable"></div></div></section>
 </main><footer class="footer">Kecamatan Wirosari · Kanal Pengaduan &amp; Aspirasi Masyarakat</footer>
 <script>
-
-// Semua request dari browser diarahkan ke Vercel API; URL Apps Script disimpan di server Vercel.
-async function apiCall(action, ...params) {
-  const response = await fetch('/api/siwira', {
-    method: 'POST', headers: {'Content-Type':'application/json'},
-    body: JSON.stringify({action, params})
-  });
-  const payload = await response.json();
-  if (!response.ok || !payload.ok) throw new Error(payload.error || 'Permintaan gagal.');
-  return payload.data;
-}
-function apiRun(action, params, success, failure) {
-  apiCall(action, ...params).then(success).catch(failure || (e => alert(e.message)));
-}
-
 let sessionToken='';let publicNews=[];function showPage(id,btn){document.querySelectorAll('main>section').forEach(s=>s.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active')}
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}function fail(id,e){document.getElementById(id).innerHTML='<div class="result error">'+esc(e.message||e)+'</div>'}
-function renderNews(d){publicNews=d.news||[];const html=publicNews.length?'<div class="news-list">'+publicNews.map(n=>`<article class="news-card"><h3>${esc(n.judul)}</h3><div class="muted">${esc(n.ringkasan||'')}</div><p>${esc(n.isi||'').replace(/\n/g,'<br>')}</p></article>`).join('')+'</div>':'<p>Belum ada berita/pengumuman.</p>';document.getElementById('homeNews').innerHTML=html;document.getElementById('newsList').innerHTML=html}
-apiRun('getPublicData',[],d=>renderNews(d),e=>{document.getElementById('homeNews').textContent='Berita belum dapat dimuat.';fail('newsList',e)});
-function sendComplaint(ev){ev.preventDefault();const f=Object.fromEntries(new FormData(ev.target).entries());const b=ev.target.querySelector('button');b.disabled=true;b.textContent='Mengirim...';apiRun('submitComplaint',[f],r=>{document.getElementById('sendResult').innerHTML='<div class="result"><b>Pengaduan berhasil dikirim.</b><br>Nomor tiket Anda: <b>'+esc(r.ticket)+'</b><br>Simpan nomor ini untuk memantau status.</div>';ev.target.reset();b.disabled=false;b.textContent='Kirim Pengaduan'},e=>{fail('sendResult',e);b.disabled=false;b.textContent='Kirim Pengaduan'})}
-function track(){const t=document.getElementById('trackTicket').value,p=document.getElementById('trackPhone').value;apiRun('trackComplaint',[t,p],r=>{document.getElementById('trackResult').innerHTML=`<div class="result"><b>${esc(r.ticket)} · ${esc(r.judul)}</b><p>Status: <span class="pill">${esc(r.status)}</span></p><p>${esc(r.catatan||'')}</p><b>Riwayat</b>${(r.riwayat||[]).map(x=>`<p>${esc(x.tanggal)} — ${esc(x.status)}<br>${esc(x.catatan)}</p>`).join('')}</div>`},e=>fail('trackResult',e))}
-function login(){apiRun('loginStaff',[document.getElementById('username').value,document.getElementById('password').value],r=>{sessionToken=r.token;document.getElementById('loginBox').classList.add('hidden');document.getElementById('adminBox').classList.remove('hidden');loadAdmin()},e=>fail('loginResult',e))}
+
+
+
+function renderNews(d) {
+  publicNews = (d && Array.isArray(d.news)) ? d.news : [];
+
+  const html = publicNews.length
+    ? '<div class="news-list">' +
+      publicNews.map((n, i) => `
+        <article class="news-card">
+          <div class="news-image">
+            ${
+              n.gambar
+                ? `<img src="${esc(n.gambar)}"
+                     alt="${esc(n.judul)}"
+                     loading="lazy"
+                     onerror="this.style.display='none'">`
+                : `<div class="news-placeholder">📰</div>`
+            }
+          </div>
+
+          <div class="news-content">
+            <div class="news-date">
+              📅 ${esc(n.tanggal || '')}
+            </div>
+
+            <h3>${esc(n.judul || '')}</h3>
+
+            <p class="news-summary">
+              ${esc(n.ringkasan || '')}
+            </p>
+
+            <button class="news-read"
+              onclick="bacaBerita(${i})">
+              Baca Selengkapnya →
+            </button>
+          </div>
+        </article>
+      `).join('') +
+      '</div>'
+    : '<p>Belum ada berita/pengumuman.</p>';
+
+  const home = document.getElementById('homeNews');
+  const page = document.getElementById('newsList');
+
+  if (home) home.innerHTML = html;
+  if (page) page.innerHTML = html;
+}
+
+
+function bacaBerita(i){
+  const n = publicNews[i];
+  if(!n) return;
+
+  const isi = document.getElementById('modalBerita');
+
+  isi.innerHTML = `
+    <div class="news-modal-content">
+      <button class="news-close"
+        onclick="document.getElementById('modalBerita').style.display='none'">
+        ✕
+      </button>
+
+      <div class="news-date">📅 ${esc(n.tanggal || '')}</div>
+      <h2>${esc(n.judul)}</h2>
+
+      ${n.gambar
+        ? `<img class="news-modal-image"
+             src="${esc(n.gambar)}"
+             alt="${esc(n.judul)}">`
+        : ''
+      }
+
+      <p>${esc(n.isi || n.ringkasan || '').replace(/\n/g,'<br>')}</p>
+    </div>
+  `;
+
+  isi.style.display = 'flex';
+}
+
+
+function bacaBerita(i){
+  const n = publicNews[i];
+  if(!n) return;
+
+  const isi = document.getElementById('modalBerita');
+  isi.innerHTML = `
+    <div class="news-modal-content">
+      <button class="news-close"
+        onclick="document.getElementById('modalBerita').style.display='none'">
+        ✕
+      </button>
+
+      <div class="news-date">📅 ${esc(n.tanggalTayang || '')}</div>
+      <h2>${esc(n.judul)}</h2>
+      ${n.gambarURL
+        ? `<img class="news-modal-image" src="${esc(n.gambarURL)}" alt="${esc(n.judul)}">`
+        : ''
+      }
+      <p>${esc(n.isi || n.ringkasan || '').replace(/\n/g,'<br>')}</p>
+    </div>
+  `;
+  isi.style.display = 'flex';
+}
+
+function loadHomeStats(){
+  google.script.run
+    .withSuccessHandler(data=>{
+      document.getElementById('statTotal').textContent = data.total;
+      document.getElementById('statReceived').textContent = data.diterima;
+      document.getElementById('statProcess').textContent = data.diproses;
+      document.getElementById('statDone').textContent = data.selesai;
+    })
+    .withFailureHandler(error=>{
+      console.error('Gagal memuat statistik:', error);
+      ['statTotal','statReceived','statProcess','statDone']
+        .forEach(id=>{
+          document.getElementById(id).textContent = '–';
+        });
+    })
+    .getStatistikPublikSIWIRA();
+}
+
+
+function sendComplaint(ev) {
+  ev.preventDefault();
+
+  const form = ev.target;
+  const f = Object.fromEntries(new FormData(form).entries());
+  const fotoInput = document.getElementById('fotoBukti');
+  const file = fotoInput.files[0];
+  const b = form.querySelector('button');
+
+  if (file) {
+    const tipeDiizinkan = ['image/jpeg', 'image/png'];
+
+    if (!tipeDiizinkan.includes(file.type)) {
+      alert('Foto harus berformat JPG, JPEG, atau PNG.');
+      return;
+    }
+
+    if (file.size > 5 * 1024 * 1024) {
+      alert('Ukuran foto maksimal 5 MB.');
+      return;
+    }
+  }
+
+  b.disabled = true;
+  b.textContent = 'Mengirim...';
+
+  function kirimData() {
+    google.script.run
+      .withSuccessHandler(r => {
+        document.getElementById('sendResult').innerHTML =
+          '<div class="result">' +
+          '<b>Pengaduan berhasil dikirim.</b><br>' +
+          'Nomor tiket Anda: <b>' + esc(r.ticket) + '</b><br>' +
+          'Simpan nomor ini untuk memantau status.' +
+          '</div>';
+
+        form.reset();
+        b.disabled = false;
+        b.textContent = 'Kirim Pengaduan';
+      })
+      .withFailureHandler(e => {
+        fail('sendResult', e);
+        b.disabled = false;
+        b.textContent = 'Kirim Pengaduan';
+      })
+      .submitComplaint(f);
+  }
+
+  if (!file) {
+    kirimData();
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function(e) {
+    f.fileBase64 = e.target.result.split(',')[1];
+    f.fileName = file.name;
+    f.fileMimeType = file.type;
+    kirimData();
+  };
+
+  reader.onerror = function() {
+    alert('Foto gagal dibaca. Silakan pilih ulang.');
+    b.disabled = false;
+    b.textContent = 'Kirim Pengaduan';
+  };
+
+  reader.readAsDataURL(file);
+}
+function track(){const t=document.getElementById('trackTicket').value,p=document.getElementById('trackPhone').value;google.script.run.withSuccessHandler(r=>{document.getElementById('trackResult').innerHTML=`<div class="result"><b>${esc(r.ticket)} · ${esc(r.judul)}</b><p>Status: <span class="pill">${esc(r.status)}</span></p><p>${esc(r.catatan||'')}</p><b>Riwayat</b>${(r.riwayat||[]).map(x=>`<p>${esc(x.tanggal)} — ${esc(x.status)}<br>${esc(x.catatan)}</p>`).join('')}</div>`}).withFailureHandler(e=>fail('trackResult',e)).trackComplaint(t,p)}
+function login(){google.script.run.withSuccessHandler(r=>{sessionToken=r.token;document.getElementById('loginBox').classList.add('hidden');document.getElementById('adminBox').classList.remove('hidden');loadAdmin()}).withFailureHandler(e=>fail('loginResult',e)).loginStaff(document.getElementById('username').value,document.getElementById('password').value)}
 function logout(){sessionToken='';document.getElementById('loginBox').classList.remove('hidden');document.getElementById('adminBox').classList.add('hidden');document.getElementById('password').value=''}
-function loadAdmin(){apiRun('adminList',[sessionToken],list=>{let html='<div class="tablewrap"><table><thead><tr><th>Tiket / Pelapor</th><th>Pengaduan</th><th>Status &amp; Catatan</th><th>Aksi</th></tr></thead><tbody>';list.forEach((x,i)=>{html+=`<tr><td><b>${esc(x.Ticket)}</b><br>${esc(x.Nama)}<br>${esc(x.WhatsApp)}</td><td>${esc(x.Kategori)}<br><b>${esc(x.Judul)}</b><br>${esc(x.Isi)}</td><td><select id="st_${i}">${['Diterima','Diverifikasi','Diproses','Selesai','Ditolak'].map(s=>`<option ${s===x.Status?'selected':''}>${s}</option>`).join('')}</select><textarea id="nt_${i}" placeholder="Catatan untuk pelapor">${esc(x.Catatan||'')}</textarea><input id="dp_${i}" placeholder="Disposisi" value="${esc(x.Disposisi||'')}"></td><td><button class="btn" onclick="saveTicket('${esc(x.Ticket)}',${i})">Simpan</button></td></tr>`});html+='</tbody></table></div>';document.getElementById('adminTable').innerHTML=html},e=>fail('adminTable',e))}
-function saveTicket(ticket,i){const data={ticket,status:document.getElementById('st_'+i).value,catatan:document.getElementById('nt_'+i).value,disposisi:document.getElementById('dp_'+i).value};apiRun('updateComplaint',[sessionToken,data],()=>loadAdmin(),e=>alert(e.message||e))}
-</script></body></html>
+
+
+function loadAdmin(){
+  google.script.run
+    .withSuccessHandler(list=>{
+      window.dataAdminSIWIRA = list || [];
+
+      const html = `
+        <div id="statistikAdmin" class="admin-stats">
+          <div class="admin-stat stat-total">
+            <span>Total Pengaduan</span>
+            <strong id="admTotal">0</strong>
+            <small>Seluruh tiket masuk</small>
+          </div>
+
+          <div class="admin-stat stat-diterima">
+            <span>Diterima</span>
+            <strong id="admDiterima">0</strong>
+            <small>Pengaduan masuk</small>
+          </div>
+
+          <div class="admin-stat stat-verifikasi">
+            <span>Diverifikasi</span>
+            <strong id="admVerifikasi">0</strong>
+            <small>Telah diperiksa</small>
+          </div>
+
+          <div class="admin-stat stat-proses">
+            <span>Diproses</span>
+            <strong id="admProses">0</strong>
+            <small>Sedang ditangani</small>
+          </div>
+
+          <div class="admin-stat stat-selesai">
+            <span>Selesai</span>
+            <strong id="admSelesai">0</strong>
+            <small>Telah dituntaskan</small>
+          </div>
+
+          <div class="admin-stat stat-ditolak">
+            <span>Ditolak</span>
+            <strong id="admDitolak">0</strong>
+            <small>Tidak dapat ditindaklanjuti</small>
+          </div>
+        </div>
+
+
+<div class="admin-tools">
+  <input
+    type="search"
+    id="cariAdmin"
+    placeholder="🔎 Cari tiket, nama, atau judul pengaduan..."
+    oninput="filterAdmin()">
+
+  <select id="filterStatusAdmin" onchange="filterAdmin()">
+    <option value="">Semua Status</option>
+    <option value="Diterima">Diterima</option>
+    <option value="Diverifikasi">Diverifikasi</option>
+    <option value="Diproses">Diproses</option>
+    <option value="Selesai">Selesai</option>
+    <option value="Ditolak">Ditolak</option>
+  </select>
+
+  <button type="button" class="btn admin-save" onclick="exportLaporanSIWIRA()">
+    📥 Export Laporan
+  </button>
+</div>
+
+<div id="hasilAdmin"></div>
+
+      `;
+
+      document.getElementById('adminTable').innerHTML = html;
+      filterAdmin();
+
+      google.script.run
+        .withSuccessHandler(s=>{
+          document.getElementById('admTotal').textContent = s.total;
+          document.getElementById('admDiterima').textContent = s.diterima;
+          document.getElementById('admVerifikasi').textContent = s.diverifikasi;
+          document.getElementById('admProses').textContent = s.diproses;
+          document.getElementById('admSelesai').textContent = s.selesai;
+          document.getElementById('admDitolak').textContent = s.ditolak;
+        })
+        .withFailureHandler(e=>{
+          console.error('Statistik gagal dimuat:', e);
+        })
+        .getStatistikAdminSIWIRA(sessionToken);
+
+    })
+    .withFailureHandler(e=>fail('adminTable',e))
+    .adminList(sessionToken);
+}
+
+
+
+function filterAdmin(){
+  const cari = (
+    document.getElementById('cariAdmin')?.value || ''
+  ).toLowerCase().trim();
+
+  const status = (
+    document.getElementById('filterStatusAdmin')?.value || ''
+  );
+
+  const list = (window.dataAdminSIWIRA || []).filter(x=>{
+    const cocokCari = [
+      x.Ticket, x.Nama, x.Judul, x.Isi, x.Kategori
+    ].some(v=>String(v || '').toLowerCase().includes(cari));
+
+    const cocokStatus = !status || x.Status === status;
+
+    return cocokCari && cocokStatus;
+  });
+
+  const warnaStatus = {
+    'Diterima': 'status-diterima',
+    'Diverifikasi': 'status-verifikasi',
+    'Diproses': 'status-proses',
+    'Selesai': 'status-selesai',
+    'Ditolak': 'status-ditolak'
+  };
+
+  let html = '';
+
+  if(list.length === 0){
+    html = '<div class="empty-admin">Pengaduan tidak ditemukan.</div>';
+  } else {
+    html = `<p class="muted">Menampilkan ${list.length} pengaduan</p>
+      <div class="admin-card-list">`;
+
+    list.forEach(x=>{
+      const index = (window.dataAdminSIWIRA || []).indexOf(x);
+
+      html += `
+        <article class="admin-card">
+
+          <div class="admin-card-head">
+            <div>
+              <span class="admin-ticket">${esc(x.Ticket)}</span>
+              <div class="admin-pelapor">${esc(x.Nama)}</div>
+              <div class="muted">${esc(x.WhatsApp)}</div>
+            </div>
+            <span class="status-badge ${warnaStatus[x.Status] || ''}">
+              ${esc(x.Status || 'Belum ada status')}
+            </span>
+          </div>
+
+          <div class="admin-card-body">
+            <div class="admin-kategori">${esc(x.Kategori)}</div>
+            <h3>${esc(x.Judul)}</h3>
+            <p>${esc(x.Isi)}</p>
+
+            ${
+              x.LampiranURL && /^https:\/\/drive\.google\.com\//.test(x.LampiranURL)
+              ? `<a class="admin-photo" href="${esc(x.LampiranURL)}"
+                   target="_blank" rel="noopener">📷 Lihat Foto Bukti</a>`
+              : ''
+            }
+          </div>
+
+          <div class="admin-card-form">
+            <label>Status Pengaduan</label>
+            <select id="st_${index}">
+              ${['Diterima','Diverifikasi','Diproses','Selesai','Ditolak']
+                .map(s=>`<option value="${s}" ${s===x.Status?'selected':''}>${s}</option>`)
+                .join('')}
+            </select>
+
+            <label>Catatan untuk Pelapor</label>
+            <textarea id="nt_${index}" placeholder="Tulis catatan...">${esc(x.Catatan||'')}</textarea>
+
+            <label>Disposisi</label>
+            <select id="dp_${index}">
+              <option value="">-- Pilih Disposisi --</option>
+              ${[
+                'Sekretariat Kecamatan',
+                'Seksi Pemerintahan',
+                'Seksi Pemberdayaan Masyarakat',
+                'Seksi Ketenteraman dan Ketertiban',
+                'Seksi Pelayanan Umum',
+                'Kasi terkait',
+                'Camat',
+                'Lainnya'
+              ].map(s=>`
+                <option value="${s}" ${s===x.Disposisi?'selected':''}>${s}</option>
+              `).join('')}
+            </select>
+
+            <button class="btn admin-save"
+              onclick="saveTicket('${esc(x.Ticket)}',${index})">
+              💾 Simpan Perubahan
+            </button>
+          </div>
+
+        </article>
+      `;
+    });
+
+    html += '</div>';
+  }
+
+  document.getElementById('hasilAdmin').innerHTML = html;
+}
+
+
+function muatBeritaSIWIRA() {
+  const newsList = document.getElementById('newsList');
+  const homeNews = document.getElementById('homeNews');
+
+  if (newsList) newsList.innerHTML = 'Memuat berita...';
+
+  google.script.run
+    .withSuccessHandler(function(data) {
+      console.log('Data berita:', data);
+      renderNews(data);
+    })
+    .withFailureHandler(function(error) {
+      console.error('Gagal memuat berita:', error);
+
+      const pesan = 'Gagal memuat berita: ' +
+        (error.message || error);
+
+      if (newsList) newsList.textContent = pesan;
+      if (homeNews) homeNews.textContent = pesan;
+    })
+    .getPublicData();
+}
+
+muatBeritaSIWIRA();
+function saveTicket(ticket, index) {
+  const status = document.getElementById('st_' + index).value;
+  const catatan = document.getElementById('nt_' + index).value;
+  const disposisi = document.getElementById('dp_' + index).value;
+
+  if (!confirm('Simpan perubahan pengaduan ini?')) {
+    return;
+  }
+
+  google.script.run
+    .withSuccessHandler(function(result) {
+      alert('Perubahan berhasil disimpan.');
+      loadAdmin();
+    })
+    .withFailureHandler(function(error) {
+      alert('Gagal menyimpan: ' + (error.message || error));
+    })
+    .updateComplaint(sessionToken, {
+      ticket: ticket,
+      status: status,
+      catatan: catatan,
+      disposisi: disposisi
+    });
+}
+
+
+function exportLaporanSIWIRA() {
+  const data = window.dataAdminSIWIRA || [];
+
+  if (data.length === 0) {
+    alert('Belum ada data pengaduan untuk diekspor.');
+    return;
+  }
+
+  const cari = (
+    document.getElementById('cariAdmin')?.value || ''
+  ).toLowerCase().trim();
+
+  const status = (
+    document.getElementById('filterStatusAdmin')?.value || ''
+  );
+
+  const hasil = data.filter(x => {
+    const cocokCari = [
+      x.Ticket, x.Nama, x.Judul, x.Isi, x.Kategori
+    ].some(v => String(v || '').toLowerCase().includes(cari));
+
+    return cocokCari && (!status || x.Status === status);
+  });
+
+  if (hasil.length === 0) {
+    alert('Tidak ada data yang sesuai filter.');
+    return;
+  }
+
+  const tombol = document.querySelector(
+    'button[onclick="exportLaporanSIWIRA()"]'
+  );
+
+  if (tombol) {
+    tombol.disabled = true;
+    tombol.textContent = '⏳ Membuat Excel...';
+  }
+
+  google.script.run
+    .withSuccessHandler(function(res) {
+      if (tombol) {
+        tombol.disabled = false;
+        tombol.textContent = '📥 Export Laporan';
+      }
+
+      try {
+        const byteCharacters = atob(res.base64);
+        const byteNumbers = new Array(byteCharacters.length);
+
+        for (let i = 0; i < byteCharacters.length; i++) {
+          byteNumbers[i] = byteCharacters.charCodeAt(i);
+        }
+
+        const byteArray = new Uint8Array(byteNumbers);
+
+        const blob = new Blob([byteArray], {
+          type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        });
+
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+
+        link.href = url;
+        link.download = res.namaFile;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+
+        alert('Berhasil mengekspor ' + hasil.length + ' laporan ke Excel.');
+
+      } catch (e) {
+        alert('Gagal membuat file Excel: ' + e.message);
+      }
+    })
+    .withFailureHandler(function(error) {
+      if (tombol) {
+        tombol.disabled = false;
+        tombol.textContent = '📥 Export Laporan';
+      }
+
+      alert('Gagal ekspor Excel: ' + (error.message || error));
+    })
+    .buatExcelSIWIRA(hasil);
+}
+
+
+</script>
+<div id="modalBerita"></div>
+</body></html>
+
